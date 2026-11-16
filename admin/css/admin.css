@@ -1,0 +1,32 @@
+.porta-login-wrap{max-width:1200px}
+.porta-login-lead{max-width:46rem;color:#3c434a}
+.porta-login-starters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0 20px}
+.porta-login-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,380px);gap:24px;align-items:start}
+.porta-login-main{grid-column:1;min-width:0}
+.porta-login-form{margin:0}
+.porta-login-preview-col{grid-column:2;grid-row:1;position:sticky;top:46px}
+@media (max-width:960px){.porta-login-layout{grid-template-columns:1fr}.porta-login-main,.porta-login-preview-col{grid-column:1;grid-row:auto;position:static}}
+.porta-login-tabs{display:flex;flex-wrap:wrap;gap:4px;margin:0;border-bottom:1px solid #dcdcde}
+.porta-login-tab{display:inline-block;padding:8px 14px;text-decoration:none;color:#2c3338;border-radius:4px 4px 0 0}
+.porta-login-tab.is-active{background:#fff;border:1px solid #dcdcde;border-bottom-color:#fff;margin-bottom:-1px;font-weight:600}
+.porta-login-panel{display:none;background:#fff;border:1px solid #dcdcde;border-top:0;padding:16px 20px 8px}
+.porta-login-panel.is-active{display:block}
+.porta-login-row{display:grid;grid-template-columns:200px minmax(0,1fr);gap:12px;margin:0 0 14px;align-items:center}
+@media (max-width:782px){.porta-login-row{grid-template-columns:1fr}}
+.porta-login-row-label label{font-weight:600}
+.porta-login-check{margin:0 0 12px}
+.porta-login-media-preview{margin:0 0 8px;min-height:20px}
+.porta-login-media-preview img{max-width:140px;max-height:140px;width:auto;height:auto;object-fit:contain;display:block;background:#FBF8F1;padding:6px}.porta-login-media[data-target="logo_id_dark"] .porta-login-media-preview img{background:#0F1A30}
+.porta-login-preview-col{position:sticky;top:46px}
+.porta-login-preview-toolbar{display:flex;justify-content:space-between;align-items:center;margin:0 0 8px;gap:8px}
+.porta-login-preview{border:1px solid #dcdcde;border-radius:8px;overflow:hidden;min-height:520px}
+.lf-preview-frame{min-height:520px;padding:36px 20px;display:flex;flex-direction:column;align-items:center;background:#f0f0f1;transition:background .2s ease}
+.lf-preview-logo a{display:block;width:84px;height:84px;margin:0 auto 16px;background-color:transparent;background-position:center;background-size:contain;background-repeat:no-repeat;text-indent:-9999px;overflow:hidden}
+.lf-preview-form{width:min(100%,320px);background:#fff;padding:24px 24px 16px;border:1px solid #c3c4c7;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.lf-preview-form label{display:block;margin:0 0 4px;font-size:14px}
+.lf-preview-input{width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #8c8f94;background:#fff;color:#2c3338;margin:0 0 12px}
+.lf-preview-button{width:100%;border:0;background:#2271b1;color:#fff;padding:8px 12px;border-radius:3px;cursor:default;font-weight:600}
+.lf-preview-nav,.lf-preview-back{width:min(100%,320px);margin:16px 0 0;font-size:13px;text-align:center}
+.lf-preview-nav a,.lf-preview-back a{color:#2271b1;text-decoration:none}
+.porta-login-upsell{margin-top:24px;padding:12px 16px;background:#f6f7f7;border-left:4px solid #1d4e4a;display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.porta-login-upsell p{margin:0}
