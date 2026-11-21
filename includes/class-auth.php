@@ -77,7 +77,7 @@ class Porta_Login_Auth {
 		if ( empty( $_POST['porta_login_hp'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			return $user;
 		}
-		return new WP_Error( 'porta_login_honeypot', __( 'We could not sign you in. Check your details and try again.', 'porta' ) );
+		return new WP_Error( 'porta_login_honeypot', __( 'We could not sign you in. Check your details and try again.', 'sanctoria-porta' ) );
 	}
 
 	/**
@@ -115,7 +115,7 @@ class Porta_Login_Auth {
 				'porta_login_locked',
 				sprintf(
 					/* translators: %d: minutes remaining. */
-					_n( 'Too many failed sign-in attempts. Try again in %d minute.', 'Too many failed sign-in attempts. Try again in %d minutes.', $mins, 'porta' ),
+					_n( 'Too many failed sign-in attempts. Try again in %d minute.', 'Too many failed sign-in attempts. Try again in %d minutes.', $mins, 'sanctoria-porta' ),
 					$mins
 				)
 			);
@@ -142,10 +142,10 @@ class Porta_Login_Auth {
 		}
 		$looks_email = is_email( $username );
 		if ( 'email' === $mode && ! $looks_email ) {
-			return new WP_Error( 'porta_login_email_only', __( 'Please sign in with your email address.', 'porta' ) );
+			return new WP_Error( 'porta_login_email_only', __( 'Please sign in with your email address.', 'sanctoria-porta' ) );
 		}
 		if ( 'username' === $mode && $looks_email ) {
-			return new WP_Error( 'porta_login_username_only', __( 'Please sign in with your username, not your email address.', 'porta' ) );
+			return new WP_Error( 'porta_login_username_only', __( 'Please sign in with your username, not your email address.', 'sanctoria-porta' ) );
 		}
 		return $user;
 	}
@@ -207,7 +207,7 @@ class Porta_Login_Auth {
 			return;
 		}
 		echo '<p class="porta-login-hp" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">';
-		echo '<label for="porta_login_hp">' . esc_html__( 'Leave this field empty', 'porta' ) . '</label>';
+		echo '<label for="porta_login_hp">' . esc_html__( 'Leave this field empty', 'sanctoria-porta' ) . '</label>';
 		echo '<input type="text" name="porta_login_hp" id="porta_login_hp" value="" tabindex="-1" autocomplete="off" />';
 		echo '</p>';
 	}

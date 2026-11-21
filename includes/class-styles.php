@@ -287,7 +287,7 @@ class Porta_Login_Styles {
 		}
 		$message = Porta_Login_Settings::get_value( 'custom_error_message', '' );
 		if ( ! $message ) {
-			$message = __( 'We could not sign you in. Check your details and try again.', 'porta' );
+			$message = __( 'We could not sign you in. Check your details and try again.', 'sanctoria-porta' );
 		}
 		return $message;
 	}

@@ -28,12 +28,12 @@ class Porta_Login_Admin {
 	}
 
 	/**
-	 * Add Appearance → Porta.
+	 * Add Appearance → Sanctoria Porta.
 	 */
 	public static function menu() {
 		add_theme_page(
-			__( 'Porta', 'porta' ),
-			__( 'Porta', 'porta' ),
+			__( 'Sanctoria Porta', 'sanctoria-porta' ),
+			__( 'Sanctoria Porta', 'sanctoria-porta' ),
 			'manage_options',
 			'porta',
 			array( __CLASS__, 'render' )
@@ -41,7 +41,7 @@ class Porta_Login_Admin {
 	}
 
 	/**
-	 * Settings URL for Appearance → Porta.
+	 * Settings URL for Appearance → Sanctoria Porta.
 	 *
 	 * @return string
 	 */
@@ -59,7 +59,7 @@ class Porta_Login_Admin {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return $links;
 		}
-		$settings = '<a href="' . esc_url( self::settings_url() ) . '">' . esc_html__( 'Settings', 'porta' ) . '</a>';
+		$settings = '<a href="' . esc_url( self::settings_url() ) . '">' . esc_html__( 'Settings', 'sanctoria-porta' ) . '</a>';
 		array_unshift( $links, $settings );
 		return $links;
 	}
@@ -78,7 +78,7 @@ class Porta_Login_Admin {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return $links;
 		}
-		$links[] = '<a href="' . esc_url( self::settings_url() ) . '">' . esc_html__( 'Settings', 'porta' ) . '</a>';
+		$links[] = '<a href="' . esc_url( self::settings_url() ) . '">' . esc_html__( 'Settings', 'sanctoria-porta' ) . '</a>';
 		return $links;
 	}
 
@@ -121,8 +121,8 @@ class Porta_Login_Admin {
 				'logoUrlDark' => $logo_d ? $logo_d : '',
 				'bgUrl'     => $bg ? $bg : '',
 				'defaultLogo' => admin_url( 'images/wordpress-logo.svg?ver=20131107' ),
-				'mediaTitle'  => __( 'Select image', 'porta' ),
-				'mediaButton' => __( 'Use this image', 'porta' ),
+				'mediaTitle'  => __( 'Select image', 'sanctoria-porta' ),
+				'mediaButton' => __( 'Use this image', 'sanctoria-porta' ),
 			)
 		);
 	}
@@ -132,7 +132,7 @@ class Porta_Login_Admin {
 	 */
 	public static function apply_starter() {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You do not have permission to do this.', 'porta' ) );
+			wp_die( esc_html__( 'You do not have permission to do this.', 'sanctoria-porta' ) );
 		}
 		check_admin_referer( 'porta_login_apply_starter' );
 		$key      = isset( $_GET['starter'] ) ? sanitize_key( wp_unslash( $_GET['starter'] ) ) : '';
@@ -188,9 +188,9 @@ class Porta_Login_Admin {
 		$s        = Porta_Login_Settings::get();
 		$starters = Porta_Login_Settings::starters();
 		$tabs     = array(
-			'design'  => __( 'Design', 'porta' ),
-			'messages'=> __( 'Messages & visibility', 'porta' ),
-			'login'   => __( 'Sign-in options', 'porta' ),
+			'design'  => __( 'Design', 'sanctoria-porta' ),
+			'messages'=> __( 'Messages & visibility', 'sanctoria-porta' ),
+			'login'   => __( 'Sign-in options', 'sanctoria-porta' ),
 		);
 		/**
 		 * Filter settings tabs. Pro can add more.
@@ -206,12 +206,12 @@ class Porta_Login_Admin {
 		<div class="wrap porta-login-wrap">
 			<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 			<?php if ( isset( $_GET['porta_login_msg'] ) && 'starter' === $_GET['porta_login_msg'] ) : // phpcs:ignore WordPress.Security.NonceVerification.Recommended ?>
-				<div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Starter style applied. You can keep editing below.', 'porta' ); ?></p></div>
+				<div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Starter style applied. You can keep editing below.', 'sanctoria-porta' ); ?></p></div>
 			<?php endif; ?>
-			<p class="porta-login-lead"><?php esc_html_e( 'Brand the WordPress login, registration, and lost-password screens. Changes stay on this site — nothing is sent to an external service.', 'porta' ); ?></p>
+			<p class="porta-login-lead"><?php esc_html_e( 'Brand the WordPress login, registration, and lost-password screens. Changes stay on this site — nothing is sent to an external service.', 'sanctoria-porta' ); ?></p>
 
 			<div class="porta-login-starters">
-				<span><?php esc_html_e( 'Start from a palette:', 'porta' ); ?></span>
+				<span><?php esc_html_e( 'Start from a palette:', 'sanctoria-porta' ); ?></span>
 				<?php foreach ( $starters as $key => $starter ) : ?>
 					<a class="button" href="<?php echo esc_url( wp_nonce_url( add_query_arg( array( 'action' => 'porta_login_apply_starter', 'starter' => $key ), admin_url( 'admin-post.php' ) ), 'porta_login_apply_starter' ) ); ?>">
 						<?php echo esc_html( $starter['label'] ); ?>
@@ -222,7 +222,7 @@ class Porta_Login_Admin {
 
 			<div class="porta-login-layout">
 				<div class="porta-login-main">
-					<nav class="porta-login-tabs" aria-label="<?php esc_attr_e( 'Settings sections', 'porta' ); ?>">
+					<nav class="porta-login-tabs" aria-label="<?php esc_attr_e( 'Settings sections', 'sanctoria-porta' ); ?>">
 						<?php foreach ( $tabs as $id => $label ) : ?>
 							<a href="#porta-login-tab-<?php echo esc_attr( $id ); ?>" class="porta-login-tab<?php echo $active === $id ? ' is-active' : ''; ?>" data-tab="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $label ); ?></a>
 						<?php endforeach; ?>
@@ -232,62 +232,62 @@ class Porta_Login_Admin {
 					<input type="hidden" name="porta_login_active_tab" class="porta-login-active-tab" value="<?php echo esc_attr( $active ); ?>" />
 
 					<div id="porta-login-tab-design" class="porta-login-panel<?php echo 'design' === $active ? ' is-active' : ''; ?>">
-						<?php self::field_media( 'logo_id', __( 'Logo (for light backgrounds)', 'porta' ), $s['logo_id'] ); ?>
-						<?php self::field_media( 'logo_id_dark', __( 'Logo (for dark backgrounds)', 'porta' ), $s['logo_id_dark'] ?? 0 ); ?>
-						<p class="description" style="margin:-8px 0 16px 0;"><?php esc_html_e( 'Use a transparent PNG. Porta picks the dark-background logo automatically when the login page background is dark.', 'porta' ); ?></p>
-						<?php self::field_number( 'logo_width', __( 'Logo width (px)', 'porta' ), $s['logo_width'], 32, 400 ); ?>
-						<?php self::field_number( 'logo_height', __( 'Logo height (px)', 'porta' ), $s['logo_height'], 32, 400 ); ?>
-						<?php self::field_text( 'logo_url', __( 'Logo link URL', 'porta' ), $s['logo_url'], 'https://' ); ?>
-						<?php self::field_text( 'logo_title', __( 'Logo hover title', 'porta' ), $s['logo_title'] ); ?>
+						<?php self::field_media( 'logo_id', __( 'Logo (for light backgrounds)', 'sanctoria-porta' ), $s['logo_id'] ); ?>
+						<?php self::field_media( 'logo_id_dark', __( 'Logo (for dark backgrounds)', 'sanctoria-porta' ), $s['logo_id_dark'] ?? 0 ); ?>
+						<p class="description" style="margin:-8px 0 16px 0;"><?php esc_html_e( 'Use a transparent PNG. Sanctoria Porta picks the dark-background logo automatically when the login page background is dark.', 'sanctoria-porta' ); ?></p>
+						<?php self::field_number( 'logo_width', __( 'Logo width (px)', 'sanctoria-porta' ), $s['logo_width'], 32, 400 ); ?>
+						<?php self::field_number( 'logo_height', __( 'Logo height (px)', 'sanctoria-porta' ), $s['logo_height'], 32, 400 ); ?>
+						<?php self::field_text( 'logo_url', __( 'Logo link URL', 'sanctoria-porta' ), $s['logo_url'], 'https://' ); ?>
+						<?php self::field_text( 'logo_title', __( 'Logo hover title', 'sanctoria-porta' ), $s['logo_title'] ); ?>
 
-						<?php self::field_select( 'bg_type', __( 'Background type', 'porta' ), $s['bg_type'], array( 'color' => __( 'Solid color', 'porta' ), 'gradient' => __( 'Gradient', 'porta' ), 'image' => __( 'Image', 'porta' ) ) ); ?>
-						<?php self::field_color( 'bg_color', __( 'Background color', 'porta' ), $s['bg_color'] ); ?>
-						<?php self::field_color( 'bg_color_2', __( 'Gradient second color', 'porta' ), $s['bg_color_2'] ); ?>
-						<?php self::field_number( 'bg_gradient_angle', __( 'Gradient angle', 'porta' ), $s['bg_gradient_angle'], 0, 360 ); ?>
-						<?php self::field_media( 'bg_image_id', __( 'Background image', 'porta' ), $s['bg_image_id'] ); ?>
+						<?php self::field_select( 'bg_type', __( 'Background type', 'sanctoria-porta' ), $s['bg_type'], array( 'color' => __( 'Solid color', 'sanctoria-porta' ), 'gradient' => __( 'Gradient', 'sanctoria-porta' ), 'image' => __( 'Image', 'sanctoria-porta' ) ) ); ?>
+						<?php self::field_color( 'bg_color', __( 'Background color', 'sanctoria-porta' ), $s['bg_color'] ); ?>
+						<?php self::field_color( 'bg_color_2', __( 'Gradient second color', 'sanctoria-porta' ), $s['bg_color_2'] ); ?>
+						<?php self::field_number( 'bg_gradient_angle', __( 'Gradient angle', 'sanctoria-porta' ), $s['bg_gradient_angle'], 0, 360 ); ?>
+						<?php self::field_media( 'bg_image_id', __( 'Background image', 'sanctoria-porta' ), $s['bg_image_id'] ); ?>
 
-						<?php self::field_color( 'form_bg', __( 'Form background', 'porta' ), $s['form_bg'] ); ?>
-						<?php self::field_color( 'form_border_color', __( 'Form border color', 'porta' ), $s['form_border_color'] ); ?>
-						<?php self::field_number( 'form_border_width', __( 'Form border width (px)', 'porta' ), $s['form_border_width'], 0, 12 ); ?>
-						<?php self::field_number( 'form_radius', __( 'Form corner radius (px)', 'porta' ), $s['form_radius'], 0, 40 ); ?>
-						<?php self::field_number( 'form_padding', __( 'Form padding (px)', 'porta' ), $s['form_padding'], 8, 64 ); ?>
-						<?php self::field_select( 'form_shadow', __( 'Form shadow', 'porta' ), $s['form_shadow'], array( 'none' => __( 'None', 'porta' ), 'light' => __( 'Light', 'porta' ), 'medium' => __( 'Medium', 'porta' ), 'heavy' => __( 'Heavy', 'porta' ) ) ); ?>
-						<?php self::field_number( 'form_width', __( 'Form width (px)', 'porta' ), $s['form_width'], 240, 560 ); ?>
+						<?php self::field_color( 'form_bg', __( 'Form background', 'sanctoria-porta' ), $s['form_bg'] ); ?>
+						<?php self::field_color( 'form_border_color', __( 'Form border color', 'sanctoria-porta' ), $s['form_border_color'] ); ?>
+						<?php self::field_number( 'form_border_width', __( 'Form border width (px)', 'sanctoria-porta' ), $s['form_border_width'], 0, 12 ); ?>
+						<?php self::field_number( 'form_radius', __( 'Form corner radius (px)', 'sanctoria-porta' ), $s['form_radius'], 0, 40 ); ?>
+						<?php self::field_number( 'form_padding', __( 'Form padding (px)', 'sanctoria-porta' ), $s['form_padding'], 8, 64 ); ?>
+						<?php self::field_select( 'form_shadow', __( 'Form shadow', 'sanctoria-porta' ), $s['form_shadow'], array( 'none' => __( 'None', 'sanctoria-porta' ), 'light' => __( 'Light', 'sanctoria-porta' ), 'medium' => __( 'Medium', 'sanctoria-porta' ), 'heavy' => __( 'Heavy', 'sanctoria-porta' ) ) ); ?>
+						<?php self::field_number( 'form_width', __( 'Form width (px)', 'sanctoria-porta' ), $s['form_width'], 240, 560 ); ?>
 
-						<?php self::field_color( 'input_bg', __( 'Input background', 'porta' ), $s['input_bg'] ); ?>
-						<?php self::field_color( 'input_text', __( 'Input text', 'porta' ), $s['input_text'] ); ?>
-						<?php self::field_color( 'input_border', __( 'Input border', 'porta' ), $s['input_border'] ); ?>
-						<?php self::field_color( 'input_focus', __( 'Input focus color', 'porta' ), $s['input_focus'] ); ?>
-						<?php self::field_color( 'button_bg', __( 'Button color', 'porta' ), $s['button_bg'] ); ?>
-						<?php self::field_color( 'button_text', __( 'Button text', 'porta' ), $s['button_text'] ); ?>
-						<?php self::field_color( 'button_hover_bg', __( 'Button hover color', 'porta' ), $s['button_hover_bg'] ); ?>
-						<?php self::field_color( 'button_hover_text', __( 'Button hover text', 'porta' ), $s['button_hover_text'] ); ?>
-						<?php self::field_color( 'label_color', __( 'Label color', 'porta' ), $s['label_color'] ); ?>
-						<?php self::field_color( 'link_color', __( 'Link color', 'porta' ), $s['link_color'] ); ?>
-						<?php self::field_color( 'link_hover', __( 'Link hover color', 'porta' ), $s['link_hover'] ); ?>
+						<?php self::field_color( 'input_bg', __( 'Input background', 'sanctoria-porta' ), $s['input_bg'] ); ?>
+						<?php self::field_color( 'input_text', __( 'Input text', 'sanctoria-porta' ), $s['input_text'] ); ?>
+						<?php self::field_color( 'input_border', __( 'Input border', 'sanctoria-porta' ), $s['input_border'] ); ?>
+						<?php self::field_color( 'input_focus', __( 'Input focus color', 'sanctoria-porta' ), $s['input_focus'] ); ?>
+						<?php self::field_color( 'button_bg', __( 'Button color', 'sanctoria-porta' ), $s['button_bg'] ); ?>
+						<?php self::field_color( 'button_text', __( 'Button text', 'sanctoria-porta' ), $s['button_text'] ); ?>
+						<?php self::field_color( 'button_hover_bg', __( 'Button hover color', 'sanctoria-porta' ), $s['button_hover_bg'] ); ?>
+						<?php self::field_color( 'button_hover_text', __( 'Button hover text', 'sanctoria-porta' ), $s['button_hover_text'] ); ?>
+						<?php self::field_color( 'label_color', __( 'Label color', 'sanctoria-porta' ), $s['label_color'] ); ?>
+						<?php self::field_color( 'link_color', __( 'Link color', 'sanctoria-porta' ), $s['link_color'] ); ?>
+						<?php self::field_color( 'link_hover', __( 'Link hover color', 'sanctoria-porta' ), $s['link_hover'] ); ?>
 
-						<?php self::field_textarea( 'custom_css', __( 'Custom CSS', 'porta' ), $s['custom_css'], __( 'Added only on the login screens. Do not paste scripts here.', 'porta' ) ); ?>
+						<?php self::field_textarea( 'custom_css', __( 'Custom CSS', 'sanctoria-porta' ), $s['custom_css'], __( 'Added only on the login screens. Do not paste scripts here.', 'sanctoria-porta' ) ); ?>
 					</div>
 
 					<div id="porta-login-tab-messages" class="porta-login-panel<?php echo 'messages' === $active ? ' is-active' : ''; ?>">
-						<?php self::field_checkbox( 'hide_back_to_blog', __( 'Hide the “Go to site” link', 'porta' ), $s['hide_back_to_blog'] ); ?>
-						<?php self::field_checkbox( 'hide_language', __( 'Hide the language switcher', 'porta' ), $s['hide_language'] ); ?>
-						<?php self::field_checkbox( 'custom_error', __( 'Use a single custom error message', 'porta' ), $s['custom_error'] ); ?>
-						<?php self::field_text( 'custom_error_message', __( 'Custom error message', 'porta' ), $s['custom_error_message'], __( 'We could not sign you in. Check your details and try again.', 'porta' ) ); ?>
+						<?php self::field_checkbox( 'hide_back_to_blog', __( 'Hide the “Go to site” link', 'sanctoria-porta' ), $s['hide_back_to_blog'] ); ?>
+						<?php self::field_checkbox( 'hide_language', __( 'Hide the language switcher', 'sanctoria-porta' ), $s['hide_language'] ); ?>
+						<?php self::field_checkbox( 'custom_error', __( 'Use a single custom error message', 'sanctoria-porta' ), $s['custom_error'] ); ?>
+						<?php self::field_text( 'custom_error_message', __( 'Custom error message', 'sanctoria-porta' ), $s['custom_error_message'], __( 'We could not sign you in. Check your details and try again.', 'sanctoria-porta' ) ); ?>
 					</div>
 
 					<div id="porta-login-tab-login" class="porta-login-panel<?php echo 'login' === $active ? ' is-active' : ''; ?>">
-						<?php self::field_select( 'login_with', __( 'Sign in with', 'porta' ), $s['login_with'], array( 'username_or_email' => __( 'Username or email', 'porta' ), 'username' => __( 'Username only', 'porta' ), 'email' => __( 'Email only', 'porta' ) ) ); ?>
-						<?php self::field_checkbox( 'show_password', __( 'Keep WordPress’s built-in “show password” eye toggle', 'porta' ), $s['show_password'] ); ?>
-						<?php self::field_checkbox( 'remember_me_default', __( 'Tick “Remember me” by default', 'porta' ), $s['remember_me_default'] ); ?>
-						<?php self::field_checkbox( 'honeypot', __( 'Add a hidden honeypot field to deter simple bots (no third-party captcha)', 'porta' ), $s['honeypot'] ); ?>
-						<?php self::field_checkbox( 'lockout_enabled', __( 'Limit failed sign-in attempts by IP', 'porta' ), $s['lockout_enabled'] ); ?>
-						<?php self::field_number( 'lockout_limit', __( 'Failed attempts before lockout', 'porta' ), $s['lockout_limit'], 2, 20 ); ?>
-						<?php self::field_number( 'lockout_minutes', __( 'Lockout duration (minutes)', 'porta' ), $s['lockout_minutes'], 1, 1440 ); ?>
-						<p class="description"><?php esc_html_e( 'If you ever need to bypass a lockout, add this line to wp-config.php: define( \'PORTA_LOGIN_DISABLE_LOCKOUT\', true );', 'porta' ); ?></p>
+						<?php self::field_select( 'login_with', __( 'Sign in with', 'sanctoria-porta' ), $s['login_with'], array( 'username_or_email' => __( 'Username or email', 'sanctoria-porta' ), 'username' => __( 'Username only', 'sanctoria-porta' ), 'email' => __( 'Email only', 'sanctoria-porta' ) ) ); ?>
+						<?php self::field_checkbox( 'show_password', __( 'Keep WordPress’s built-in “show password” eye toggle', 'sanctoria-porta' ), $s['show_password'] ); ?>
+						<?php self::field_checkbox( 'remember_me_default', __( 'Tick “Remember me” by default', 'sanctoria-porta' ), $s['remember_me_default'] ); ?>
+						<?php self::field_checkbox( 'honeypot', __( 'Add a hidden honeypot field to deter simple bots (no third-party captcha)', 'sanctoria-porta' ), $s['honeypot'] ); ?>
+						<?php self::field_checkbox( 'lockout_enabled', __( 'Limit failed sign-in attempts by IP', 'sanctoria-porta' ), $s['lockout_enabled'] ); ?>
+						<?php self::field_number( 'lockout_limit', __( 'Failed attempts before lockout', 'sanctoria-porta' ), $s['lockout_limit'], 2, 20 ); ?>
+						<?php self::field_number( 'lockout_minutes', __( 'Lockout duration (minutes)', 'sanctoria-porta' ), $s['lockout_minutes'], 1, 1440 ); ?>
+						<p class="description"><?php esc_html_e( 'If you ever need to bypass a lockout, add this line to wp-config.php: define( \'PORTA_LOGIN_DISABLE_LOCKOUT\', true );', 'sanctoria-porta' ); ?></p>
 					</div>
 
-					<?php submit_button( __( 'Save changes', 'porta' ) ); ?>
+					<?php submit_button( __( 'Save changes', 'sanctoria-porta' ) ); ?>
 				</form>
 
 				<?php
@@ -300,26 +300,26 @@ class Porta_Login_Admin {
 
 				<div class="porta-login-preview-col">
 					<div class="porta-login-preview-toolbar">
-						<strong><?php esc_html_e( 'Live preview', 'porta' ); ?></strong>
-						<a href="<?php echo esc_url( wp_login_url() ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Open the real login page', 'porta' ); ?></a>
+						<strong><?php esc_html_e( 'Live preview', 'sanctoria-porta' ); ?></strong>
+						<a href="<?php echo esc_url( wp_login_url() ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Open the real login page', 'sanctoria-porta' ); ?></a>
 					</div>
 					<div class="porta-login-preview" id="porta-login-preview">
 						<div class="lf-preview-frame" id="lf-preview-frame">
 							<h1 class="lf-preview-logo"><a href="#" id="lf-preview-logo-link"><span class="screen-reader-text" id="lf-preview-logo-title"><?php bloginfo( 'name' ); ?></span></a></h1>
 							<form class="lf-preview-form" action="#" method="post" onsubmit="return false;">
 								<p>
-									<label id="lf-preview-user-label"><?php esc_html_e( 'Username or Email Address', 'porta' ); ?></label>
+									<label id="lf-preview-user-label"><?php esc_html_e( 'Username or Email Address', 'sanctoria-porta' ); ?></label>
 									<input type="text" class="lf-preview-input" value="" readonly />
 								</p>
 								<p>
-									<label><?php esc_html_e( 'Password', 'porta' ); ?></label>
+									<label><?php esc_html_e( 'Password', 'sanctoria-porta' ); ?></label>
 									<input type="password" class="lf-preview-input" value="••••••••" readonly />
 								</p>
-								<p class="lf-preview-forget"><label><input type="checkbox" disabled /> <?php esc_html_e( 'Remember Me', 'porta' ); ?></label></p>
-								<p class="lf-preview-submit"><button type="button" class="lf-preview-button"><?php esc_html_e( 'Log In', 'porta' ); ?></button></p>
+								<p class="lf-preview-forget"><label><input type="checkbox" disabled /> <?php esc_html_e( 'Remember Me', 'sanctoria-porta' ); ?></label></p>
+								<p class="lf-preview-submit"><button type="button" class="lf-preview-button"><?php esc_html_e( 'Log In', 'sanctoria-porta' ); ?></button></p>
 							</form>
-							<p class="lf-preview-nav"><a href="#"><?php esc_html_e( 'Lost your password?', 'porta' ); ?></a></p>
-							<p class="lf-preview-back" id="lf-preview-back"><a href="#"><?php esc_html_e( '&larr; Go to site', 'porta' ); ?></a></p>
+							<p class="lf-preview-nav"><a href="#"><?php esc_html_e( 'Lost your password?', 'sanctoria-porta' ); ?></a></p>
+							<p class="lf-preview-back" id="lf-preview-back"><a href="#"><?php esc_html_e( '&larr; Go to site', 'sanctoria-porta' ); ?></a></p>
 						</div>
 					</div>
 				</div>
@@ -330,8 +330,8 @@ class Porta_Login_Admin {
 			if ( ! $dismissed && ! defined( 'PORTA_LOGIN_PRO_VERSION' ) ) :
 				?>
 				<div class="porta-login-upsell" id="porta-login-upsell">
-					<p><?php esc_html_e( 'Porta Pro adds a template library, passkey (Windows Hello / Face ID / Touch ID) sign-in, a custom login URL with a safe recovery path, role-based redirects, white-label admin branding, and tools for agencies managing many sites. It is a one-time purchase: Porta Pro ($20, one site, three years of updates), Porta Pro Trinity ($50, three sites, lifetime updates), or Porta Pro Infinity ($99, unlimited sites, lifetime updates). The free plugin stays fully usable on its own.', 'porta' ); ?></p>
-					<button type="button" class="button-link" id="porta-login-dismiss-upsell" data-nonce="<?php echo esc_attr( wp_create_nonce( 'porta_login_dismiss_upsell' ) ); ?>"><?php esc_html_e( 'Dismiss', 'porta' ); ?></button>
+					<p><?php esc_html_e( 'Sanctoria Porta Pro adds a template library, passkey (Windows Hello / Face ID / Touch ID) sign-in, a custom login URL with a safe recovery path, role-based redirects, white-label admin branding, and tools for agencies managing many sites. It is a one-time purchase: Porta Pro ($20, one site, three years of updates), Porta Pro Trinity ($50, three sites, lifetime updates), or Porta Pro Infinity ($99, unlimited sites, lifetime updates). The free plugin stays fully usable on its own.', 'sanctoria-porta' ); ?></p>
+					<button type="button" class="button-link" id="porta-login-dismiss-upsell" data-nonce="<?php echo esc_attr( wp_create_nonce( 'porta_login_dismiss_upsell' ) ); ?>"><?php esc_html_e( 'Dismiss', 'sanctoria-porta' ); ?></button>
 				</div>
 			<?php endif; ?>
 		</div>
@@ -502,8 +502,8 @@ class Porta_Login_Admin {
 			$html .= '<img src="' . esc_url( $url ) . '" alt="" />';
 		}
 		$html .= '</div>';
-		$html .= '<button type="button" class="button porta-login-media-select">' . esc_html__( 'Choose image', 'porta' ) . '</button> ';
-		$html .= '<button type="button" class="button-link porta-login-media-clear">' . esc_html__( 'Remove', 'porta' ) . '</button></div>';
+		$html .= '<button type="button" class="button porta-login-media-select">' . esc_html__( 'Choose image', 'sanctoria-porta' ) . '</button> ';
+		$html .= '<button type="button" class="button-link porta-login-media-clear">' . esc_html__( 'Remove', 'sanctoria-porta' ) . '</button></div>';
 		self::row( $label, $html );
 	}
 

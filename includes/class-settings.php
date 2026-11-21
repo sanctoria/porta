@@ -90,7 +90,7 @@ class Porta_Login_Settings {
 		);
 
 		/**
-		 * Filter default Porta settings.
+		 * Filter default Sanctoria Porta settings.
 		 *
 		 * @param array $defaults Defaults.
 		 */
@@ -110,7 +110,7 @@ class Porta_Login_Settings {
 		$settings = array_merge( self::defaults(), $stored );
 
 		/**
-		 * Filter saved Porta settings.
+		 * Filter saved Sanctoria Porta settings.
 		 *
 		 * @param array $settings Settings.
 		 */
@@ -260,7 +260,7 @@ class Porta_Login_Settings {
 	public static function starters() {
 		return array(
 			'clean_light' => array(
-				'label'             => __( 'Clean Light', 'porta' ),
+				'label'             => __( 'Clean Light', 'sanctoria-porta' ),
 				'bg_type'           => 'color',
 				'bg_color'          => '#f3f1ec',
 				'form_bg'           => '#ffffff',
@@ -283,7 +283,7 @@ class Porta_Login_Settings {
 				'link_hover'        => '#163d3a',
 			),
 			'clean_dark'  => array(
-				'label'             => __( 'Clean Dark', 'porta' ),
+				'label'             => __( 'Clean Dark', 'sanctoria-porta' ),
 				'bg_type'           => 'gradient',
 				'bg_color'          => '#0f1720',
 				'bg_color_2'        => '#1d4e4a',
@@ -308,7 +308,7 @@ class Porta_Login_Settings {
 				'link_hover'        => '#99f6e4',
 			),
 			'porta_ivory' => array(
-				'label'             => __( 'Porta Ivory', 'porta' ),
+				'label'             => __( 'Porta Ivory', 'sanctoria-porta' ),
 				'bg_type'           => 'color',
 				'bg_color'          => '#FBF8F1',
 				'form_bg'           => '#FBF8F1',
@@ -331,7 +331,7 @@ class Porta_Login_Settings {
 				'link_hover'        => '#1B2A4A',
 			),
 			'porta_night' => array(
-				'label'             => __( 'Porta Night', 'porta' ),
+				'label'             => __( 'Porta Night', 'sanctoria-porta' ),
 				'bg_type'           => 'color',
 				'bg_color'          => '#0F1A30',
 				'form_bg'           => '#1B2A4A',

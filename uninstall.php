@@ -1,6 +1,6 @@
 <?php
 /**
- * Uninstall Porta.
+ * Uninstall Sanctoria Porta.
  *
  * @package Porta_Login
  */

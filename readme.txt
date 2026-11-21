@@ -1,18 +1,18 @@
-=== Porta ===
+=== Sanctoria Porta – Custom Login Page ===
 Contributors: sanctoria
 Tags: login, custom login, branding, white label, login page
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Brand the WordPress login screen with your logo, colors, and background. Live preview. Settings: Appearance > Porta.
+Brand the WordPress login screen with your logo, colors, and background. Live preview. Settings: Appearance > Sanctoria Porta.
 
 == Description ==
 
-Porta lets you turn the default WordPress login, registration, and lost-password screens into a branded entrance for your site — without writing code or connecting to an external service.
+Sanctoria Porta lets you turn the default WordPress login, registration, and lost-password screens into a branded entrance for your site — without writing code or connecting to an external service.
 
 The free plugin is a complete visual customizer. It is useful on its own for a single site or a client hand-off.
 
@@ -40,15 +40,15 @@ The free plugin is a complete visual customizer. It is useful on its own for a s
 * Optional single custom error message
 * Hide the “Go to site” link or the language switcher
 
-Nothing in Porta calls home. Images come from your Media Library. Styles are generated on your site.
+Nothing in Sanctoria Porta calls home. Images come from your Media Library. Styles are generated on your site.
 
 A separate Pro add-on (sold independently, not required) adds a template library, passkey sign-in, a custom login URL with a safe recovery path, role-based redirects, and agency white-label tools. Paid licenses are a one-time purchase: Porta Pro ($20, one site, three years of updates), Porta Pro Trinity ($50, three sites, lifetime updates), or Porta Pro Infinity ($99, unlimited sites, lifetime updates). The free plugin does not lock any of its own features behind a license.
 
 == Installation ==
 
-1. Upload the `porta` folder to the `/wp-content/plugins/` directory, or install the plugin through the Plugins screen.
-2. Activate Porta through the Plugins screen.
-3. Go to Appearance > Porta to choose a starter palette or set your logo and colors.
+1. Upload the `sanctoria-porta` folder to the `/wp-content/plugins/` directory, or install the plugin through the Plugins screen.
+2. Activate Sanctoria Porta through the Plugins screen.
+3. Go to Appearance > Sanctoria Porta to choose a starter palette or set your logo and colors.
 4. Save changes, then open the login page to confirm the result.
 
 == Frequently Asked Questions ==
@@ -67,12 +67,12 @@ No. The free plugin does not load Google Fonts, analytics, or any other remote a
 
 = Will this work with my page builder? =
 
-Porta styles `wp-login.php` (and the registration and lost-password forms on that screen). It does not need a page builder.
+Sanctoria Porta styles `wp-login.php` (and the registration and lost-password forms on that screen). It does not need a page builder.
 
 
 = Is there a Pro version? =
 
-Yes. The optional add-on is sold separately as a one-time purchase: Porta Pro ($20, one site, three years of updates), Porta Pro Trinity ($50, three sites, lifetime updates), or Porta Pro Infinity ($99, unlimited sites, lifetime updates). The free Porta plugin stays complete and does not require a license key.
+Yes. The optional add-on is sold separately as a one-time purchase: Porta Pro ($20, one site, three years of updates), Porta Pro Trinity ($50, three sites, lifetime updates), or Porta Pro Infinity ($99, unlimited sites, lifetime updates). The free Sanctoria Porta plugin stays complete and does not require a license key.
 
 = How do I remove all traces of the plugin? =
 
@@ -86,10 +86,17 @@ Deactivate and delete the plugin. Uninstall removes its settings. Media Library 
 
 == Changelog ==
 
+= 1.0.1 =
+* Renamed the plugin to Sanctoria Porta (slug `sanctoria-porta`) so the WordPress.org listing is clearly distinguished from other products named Porta. Settings, option names and the Appearance menu slug are unchanged, so an existing install keeps its settings after you activate the new folder.
+* The settings screen and plugin list now use the Sanctoria Porta name. Starter palettes (Porta Ivory, Porta Night) and paid add-on plan names are unchanged.
+
 = 1.0.0 =
 * Initial release.
 
 == Upgrade Notice ==
 
+= 1.0.1 =
+Renamed to Sanctoria Porta (slug sanctoria-porta) after a WordPress.org review note. Activate the new folder; your settings are kept.
+
 = 1.0.0 =
-Initial release of Porta.
+Initial release of Sanctoria Porta.
