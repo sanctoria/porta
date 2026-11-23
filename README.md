@@ -12,7 +12,7 @@ The plugin slug and folder are `sanctoria-porta` (version 1.0.1). This is a rena
 
 ## Installation
 
-Sanctoria Porta is in review for the [WordPress.org plugin directory](https://wordpress.org/plugins/) under the slug `sanctoria-porta`. Until it is listed, download the zip from [Releases](https://github.com/sanctoria/porta/releases) and upload it under Plugins → Add New → Upload Plugin.
+Sanctoria Porta is available in the [WordPress.org plugin directory](https://wordpress.org/plugins/sanctoria-porta/). Install it from Plugins → Add New (search for Sanctoria Porta), or download the zip from [Releases](https://github.com/sanctoria/porta/releases) and upload it under Plugins → Add New → Upload Plugin.
 
 ## Optional Pro add-on
 
@@ -37,5 +37,6 @@ Sanctoria Porta is licensed under the [GNU General Public License v2 or later](L
 
 ## Links
 
+- [WordPress.org](https://wordpress.org/plugins/sanctoria-porta/)
 - [Product page](https://sanctoria.com/plugins/porta/)
 - [sanctoria.com](https://sanctoria.com)
